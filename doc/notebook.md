@@ -36,5 +36,16 @@
 
 ## Distributed ML (DML)
 
+There are two main streams of DML: *Scalability-Motivated DML & Privacy-Motivated DML.* Both of the two paradigms adopt parallel computing technologies. So, the two concepts are not mutually exclusive. The key difference between the two families stems from their objectives. Informally, Scalability-Motivated DML **still collect data in data silos** and then apply distributed computing, which means the methods are not (necessarily) privacy-preserving.
+
 * Scalability-Motivated DML
+  * Motivations
+    * Memory/Storage Shortage
+    * Access to More Computational Resources
+  * Technics
+    * Data Parallelism
+    * Model Partition
+    * Graph-Centric Approach
+    * Task-Centric Approach
+    * Hybrid Parallelism
 * Privacy-Motivated DML
