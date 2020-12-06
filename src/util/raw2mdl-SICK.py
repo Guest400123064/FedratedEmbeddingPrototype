@@ -32,7 +32,7 @@ def _raw2pickle(fi, fo, force=False):
                "skipped (use <-f> to overwrite)")
     else:
         print(f"[ INFO ] :: Reading raw SICK file from <{fi}>")
-        dt_sick_raw = pd.read_csv(
+        dt_sick = pd.read_csv(
             fi
             , sep='\t'
             , index_col=0
@@ -46,24 +46,39 @@ def _raw2pickle(fi, fo, force=False):
             ]
         )
 
+        # Sentence to lowercase
+        dt_sick["sentence_A"] = dt_sick["sentence_A"].str.lower()
+        dt_sick["sentence_B"] = dt_sick["sentence_B"].str.lower()
+        
+        # Recode factors: 
+        #   relationship direction & dataset partition
+        dt_sick.replace(
+            {
+                "entailment_label": {
+                    "CONTRADICTION": -1
+                    , "NEUTRAL": 0
+                    , "ENTAILMENT": 1
+                },
+
+                "SemEval_set": {
+                    "TEST": 0
+                    , "TRAIN": 1
+                    , "TRIAL": 2
+                }
+            }
+            , inplace=True
+        )
+
+        # Compute label from relatedness and direction
+        #   Max score is 5, so normalize by dividing by 5
+        dt_sick["similarity_label"] = (
+            dt_sick["relatedness_score"] * dt_sick["entailment_label"]
+        ) / 5.0
+
+        # Save file in HDF format
         print(f"[ INFO ] :: Dumping HDF5 SICK to <{fo}>")
 
     return 0
-
-
-dt_sick_raw = pd.read_csv(
-    "../../data/corpus/raw/SICK.txt"
-    , sep='\t'
-    , index_col=0
-    , usecols=[
-        "pair_ID"
-        , "sentence_A"
-        , "sentence_B"
-        , "entailment_label"
-        , "relatedness_score"
-        , "SemEval_set"
-    ]
-)
 
 
 if __name__ == "__main__":
