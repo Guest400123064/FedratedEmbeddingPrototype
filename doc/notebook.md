@@ -2,6 +2,10 @@
 
 ## Foundational Concepts
 
+* Flavors of Federated Learning (FL)
+  * Horizontal FL
+  * Vertical FL
+  * Federated Transfer Learning
 * Secure ML & Privacy-Preserving ML (PPML)
   * Secure ML is for **Integrity & Availability**
   * PPML is for **Confidentiality & Privacy**
@@ -49,3 +53,5 @@ There are two main streams of DML: *Scalability-Motivated DML & Privacy-Motivate
     * Task-Centric Approach
     * Hybrid Parallelism
 * Privacy-Motivated DML
+  * Motivations
+  * Technics
