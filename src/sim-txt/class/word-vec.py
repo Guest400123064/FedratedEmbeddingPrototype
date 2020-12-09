@@ -16,6 +16,7 @@ class WordEmbedding(object):
 
         self._read_pickle(fi)
         self._proc_pickle()
+
         return
 
     def _read_pickle(self, fi):
@@ -25,6 +26,7 @@ class WordEmbedding(object):
             self._dic_tok_vec[self.UNK] = np.array(
                 list(self._dic_tok_vec.values())
             ).mean(axis=0)
+
         return
 
     def _proc_pickle(self):
