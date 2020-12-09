@@ -86,4 +86,17 @@ There are two main streams of DML: *Scalability-Motivated DML & Privacy-Motivate
         * FedAvg (Gradient Avg & Model Avg)
         * Secured FedAvg
       * Improvements
+        * Communication Efficiency
+          * Sketched Updates
+          * Structured Updates
+            * Deep Gradient Compression (DGC)
+        * Participants Selection
       * Challenges & Prospect
+        * Federated Hyper-Parameter Tuning
+        * Reward Mechanism 
+          * To encourage more participants
+        * Anti-Fraud
+        * Training Process Control
+          * E.g. Remote Early Stopping
+        * Participant Management with Varying Reliability
+          * E.g. Different connection stability
