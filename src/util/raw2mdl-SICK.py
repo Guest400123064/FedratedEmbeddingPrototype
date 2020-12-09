@@ -8,12 +8,12 @@ def _cli_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "input"
-        , help="Single embedding file, read in binary format"
+        , help="Single SICK raw file, read in .tsv format"
         , type=str
     )
     parser.add_argument(
         "output"
-        , help="Output embedding file in pickle format"
+        , help="Output processed SICK file in .csv format"
         , type=str
     )
     parser.add_argument(
@@ -76,7 +76,8 @@ def _raw2pickle(fi, fo, force=False):
         ) / 5.0
 
         # Save file in HDF format
-        print(f"[ INFO ] :: Dumping HDF5 SICK to <{fo}>")
+        print(f"[ INFO ] :: Dumping processed .csv SICK to <{fo}>")
+        dt_sick.to_csv(fo)
 
     return 0
 
