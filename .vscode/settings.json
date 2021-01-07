@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "python.pythonPath": "C:\\Users\\lgfz1\\anaconda3\\envs\\tf-federated\\python.exe",
+=======
+    "python.pythonPath": "D:\\Users\\lgfz1\\Anaconda3\\envs\\pysyft\\python.exe",
+>>>>>>> 29d37f7ffee06612d3a88245ea827bf14fcb0590
     "cSpell.words": [
         "embeddings",
         "rmpc",
