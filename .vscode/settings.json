@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\lgfz1\\anaconda3\\envs\\pysyft\\python.exe",
+    "python.pythonPath": "C:\\Users\\lgfz1\\anaconda3\\envs\\tf-federated\\python.exe",
     "cSpell.words": [
         "embeddings",
         "rmpc",
